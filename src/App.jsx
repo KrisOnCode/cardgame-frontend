@@ -3,6 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 import Home from './pages/Home'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
+import Product from './pages/Product'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 
@@ -17,6 +18,10 @@ function App() {
             <Route exact path="/">
               {!user && <Redirect to="/login" />}
               {user && <Home />}
+            </Route>
+            <Route path="/product">
+              {!user && <Redirect to="/login" />}
+              {user && <Product />}
             </Route>
             <Route path="/login">
               {user && <Redirect to="/" />}

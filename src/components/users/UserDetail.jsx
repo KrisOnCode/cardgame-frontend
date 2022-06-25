@@ -26,12 +26,6 @@ export default function UserDetail() {
                 <div className="flex flex-wrap justify-center mt-1">
                   <h5 className='text-gray-900 dark:text-white text-sm'>Email: {data.email}</h5>
                 </div>
-                <div className="flex flex-wrap justify-center mt-1">
-                  <h5 className='text-gray-900 dark:text-white text-sm'>Password: {data.password}</h5>
-                </div>
-                <div className="flex flex-wrap justify-center mt-1">
-                  <h5 className='text-gray-900 dark:text-white text-xs'>UserId: {data.userId}</h5>
-                </div>
               </div>
             </div>
         </>

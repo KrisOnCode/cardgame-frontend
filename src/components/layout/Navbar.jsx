@@ -31,6 +31,15 @@ export default function Navbar() {
                 )}
                 {user && (
                     <>
+                        <Link to="/">
+                            <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">My Dashboard</button> 
+                        </Link>
+                        <Link to="/product">
+                            <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">Shop Tries</button> 
+                        </Link>
+                        <Link to="/">
+                            <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">My Cart</button> 
+                        </Link>
                         <Link>
                             <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50" onClick={logout}>Logout</button> 
                         </Link>
