@@ -1,5 +1,6 @@
 import UserDetail from '../components/users/UserDetail'
 import ProductList from '../components/products/ProductList'
+import Cart from '../components/cart/Cart'
 
 export default function Product() {
     return (
@@ -10,8 +11,8 @@ export default function Product() {
             <div className="col-start-5 col-span-4">
                 <ProductList />
             </div>
-            <div className="col-end-12 col-span-4">
-            
+            <div className="col-start-10 col-span-4">
+                <Cart />
             </div>
     </div>
     )

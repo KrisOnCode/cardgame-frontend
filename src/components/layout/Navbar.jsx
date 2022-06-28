@@ -38,7 +38,7 @@ export default function Navbar() {
                             <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">Shop Tries</button> 
                         </Link>
                         <Link to="/">
-                            <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">My Cart</button> 
+                            <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50">Checkout</button> 
                         </Link>
                         <Link>
                             <button class="py-2 px-2 w-full rounded-xl border border-white text-white hover:bg-purple-600 hover:text-gray-50" onClick={logout}>Logout</button> 

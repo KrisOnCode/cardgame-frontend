@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import axios from "axios";
 
 export default function ProductList() {
+    const  { user } = useAuthContext()
     const [products, setProducts] = useState([]);
+    const [orderData, setOrderData] = useState([]);
   
     useEffect(() => {
       axios.get(`https://cardgametestserver.azurewebsites.net/product`).then((res) => {
@@ -11,12 +14,23 @@ export default function ProductList() {
       });
     }, []);
   
-  
     console.log(products); 
+
+    const handleClick = async () => {
+        const {orderData} = await axios.post(
+          'https://cardgametestserver.azurewebsites.net/order',
+          {
+            userId: user.uid,
+          }
+        )
+      setOrderData(orderData)
+    }
+
+    
 
     return (
      <div>
-      <h1 className="text-white text-2xl"> Buy Tries </h1>
+      <h1 className="text-black dark:text-white text-2xl">Shop Tries</h1>
       {products &&
         products.map((product) => {
           const { productId, productName, productDescription, productPrice} = product;
@@ -33,7 +47,8 @@ export default function ProductList() {
                   <h5 className='text-gray-900 dark:text-white text-sm'>${productPrice}.00</h5>
                 </div>
                 <div className="flex flex-wrap justify-center mt-1">
-                <button class="py-2 px-2 w-full rounded-xl border border-purple-700 dark:border-purple-500 text-purple-700 dark:text-purple-500 hover:bg-purple-600 hover:text-gray-50">Buy Now!</button> 
+                <button class="py-2 px-2 w-full rounded-xl border border-purple-700 dark:border-purple-500 text-purple-700 dark:text-purple-500 hover:bg-purple-600 hover:text-white"
+                onClick={handleClick}>Add To Cart</button> 
                 </div>
               </div>
             </div>
